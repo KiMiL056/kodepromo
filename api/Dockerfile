@@ -1,4 +1,4 @@
-﻿# syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:1
 
 FROM php:8.4-cli-alpine AS deps
 WORKDIR /var/www/html
@@ -29,7 +29,6 @@ RUN composer dump-autoload --optimize
 
 FROM deps AS test
 RUN php artisan test
-
 
 FROM php:8.4-cli-alpine AS runtime
 WORKDIR /var/www/html
